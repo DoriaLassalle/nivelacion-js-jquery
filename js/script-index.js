@@ -37,8 +37,7 @@ let directions=[];
 let ingredients=[];
 function renderRecipe(recipe) {
 
-	$("#list").html(`<div>
-						<a class="item-recipe" href="recipe.html">
+	$("#list").html(`<a class="item-recipe" href="recipe.html">
 							<span class="attribution">
 								<span class="title-recipe"> </span>
 								<span class="metadata-recipe">
@@ -49,8 +48,7 @@ function renderRecipe(recipe) {
 								</span>
 							</span>							
 							<img src="URL DE LA IMAGEN" class="recipeImg"/>
-						</a>
-					</div>`);
+						</a>`);
   
 	$(".title-recipe").text(recipe.title);
 	$(".author-recipe, .source").text(recipe.source.name);
