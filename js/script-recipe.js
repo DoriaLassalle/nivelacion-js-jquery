@@ -1,6 +1,9 @@
 $(document).ready( function(){
 
     console.log("Este documento está listo")
+
+    addDirections(directions);
+	addIngredientes(ingredients);
  
     $(".js-menu").hide();
     $(".js-back").show();

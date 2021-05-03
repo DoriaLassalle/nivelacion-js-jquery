@@ -20,7 +20,7 @@ function renderHighlightedRecipes(recipesArray) {
 
 	for (let i=0; i<recipesArray.length; i++){
 		if (recipesArray[i].highlighted==true){
-			console.log(recipesArray[i]);
+			//console.log(recipesArray[i]);
 			renderRecipe(recipesArray[i]);
 		}
 	}
@@ -36,54 +36,50 @@ function renderHighlightedRecipes(recipesArray) {
 let directions=[];
 let ingredients=[];
 function renderRecipe(recipe) {
-
+	
 	$("#list").html(`<a class="item-recipe" href="recipe.html">
-							<span class="attribution">
-								<span class="title-recipe"> </span>
-								<span class="metadata-recipe">
-									<span class="author-recipe"> </span>
-									<span class="bookmarks-recipe">
-										<span class="icon-bookmark"></span> 
-									</span>
+						<span class="attribution">
+							<span class="title-recipe"> </span>
+							<span class="metadata-recipe">
+								<span class="author-recipe"> </span>
+								<span class="bookmarks-recipe">
+									<span class="icon-bookmark"></span> 
 								</span>
-							</span>							
-							<img src="URL DE LA IMAGEN" class="recipeImg"/>
-						</a>`);
+							</span>
+						</span>							
+						<img src="URL DE LA IMAGEN" class="recipeImg"/>
+					</a>`);
   
 	$(".title-recipe").text(recipe.title);
 	$(".author-recipe, .source").text(recipe.source.name);
 	$(".recipeImg").attr("src", recipe.source.url);
 	$(".description-recipe").text(recipe.excerpt);
 	$(".time").text(recipe.cooktime);
-	$(".list-ingredients").text(recipe.ingredients);//funct below
-	$(".list-directions").text(recipe.directions);//funct below
+	//$(".list-ingredients").text(recipe.ingredients);//funct below
+	//$(".list-directions").text(recipe.directions);//funct below
 	$("#otrolink").attr("href", recipe.source.url).text(recipe.source.name);
 
 	directions=recipe.directions;
 	ingredients=recipe.ingredients;
 
-/* 	addDirections(directions);
-	addIngredientes(ingredients); */
-
-	
 	console.log('Voy a pintar la receta: ', recipe);
 }
 
-/* function addDirections(directions){ //2 elementos
-	//console.log("lo que llega "+ directions.length);
+//funciones para agregar la listado
+
+function addDirections(directions){ 
 	for (let i=0; i<directions.length; i++){
-		$(".list-directions").html("<li class='item-direction'></li>")
-		$(".item-direction").text(directions[i]);
+		$(".list-directions").append("<li class='item-direction'>"+directions[i]+"</li>")
+	
 	}
 }
-function addIngredientes(ingredients){//18 elementos
-	//console.log("lo que llega2 "+ ingredients.length);
+function addIngredientes(ingredients){
 	for (let i=0; i<ingredients.length; i++){
-		$(".list-ingredients").html("<li class='ingred'></li>")
-		$(".ingred").text(ingredients[i]);
+		$(".list-ingredients").append("<li class='ingred'>"+ingredients[i]+"</li>")
+		
 	}
 
-} */
+}
 
 
 
